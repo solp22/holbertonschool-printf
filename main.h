@@ -9,5 +9,8 @@
 
 /**Prototypes**/
 int _printf(const char *format, ...);
-
+int _strlen(char *s);
+void print_string(va_list args);
+void print_char(va_list args);
+void print_percentage(va_list args);
 #endif
