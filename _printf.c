@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 	};
 
 	va_start(args, format);
-	
+
 	while (format != NULL && format[itertor1] != '\0')
 	{
 		while (func[iterator2].func)
@@ -28,9 +28,9 @@ int _printf(const char *format, ...)
 			{
 				(func[iterator2].f)(args);
 			}
-			iterator2++
+			iterator2++;
 		}
-		iterator++
+		iterator++;
 	}
 	write(1, "\n", 1);
 
