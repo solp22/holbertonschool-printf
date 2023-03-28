@@ -9,7 +9,7 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int iterator1, itertor2;
+	int iterator1, iterator2;
 
 	func_t func[] = {
 		{"%c", print_char},
@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 
-	while (format != NULL && format[itertor1] != '\0')
+	while (format != NULL && format[iterator1] != '\0')
 	{
 		while (func[iterator2].func)
 		{
