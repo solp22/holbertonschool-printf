@@ -11,7 +11,7 @@
 typedef struct func
 {
 	char *func;
-	int (*f)(va_list args);
+	void (*f)(va_list args);
 }func_t;
 
 /**Prototypes**/
