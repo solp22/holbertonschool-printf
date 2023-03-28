@@ -7,6 +7,13 @@
 #include <stdarg.h>
 #include <unistd.h>
 
+/**Struct**/
+typedef struct func
+{
+	char *func
+	int (*f)(va_list args);
+}func_t;
+
 /**Prototypes**/
 int _printf(const char *format, ...);
 int _strlen(char *s);
