@@ -3,7 +3,7 @@
  
 int (*get_functions(char format))(va_list)
 {
-	int iterator2 = 0;
+	int iterator = 0;
 
 	func_t func[] = {
 		{'c', print_char},
@@ -12,13 +12,13 @@ int (*get_functions(char format))(va_list)
 		{'\0', NULL}
 	};
 
-	while (iterator2 != 3)
+	while (iterator < 3)
 	{
-		if (func[iterator2].func == format)
+		if (func[iterator].func == format)
 		{
-			return (func[iterator2].f);
+			return (func[iterator].f);
 		}
-		iterator2++;
+		iterator++;
 	}
 	write(1, "\n", 1);
 
