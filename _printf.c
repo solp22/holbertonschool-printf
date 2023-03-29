@@ -14,12 +14,22 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 
-	while (format[iterator] != '\0')
-	{
+	for (iterator = 0; format[iterator]; iterator++)
+	{	
+		if (format[iterator] == NULL)
+		{
+			return (-1);
+		}
 		if (format[iterator] == '%')
 		{
 			f = get_functions(format[iterator + 1]);
-		}	f(args);
+			f(args);
+			iterator++;
+		}
+		else if (f == NULL) 
+		{
+			write (1, &format[iterator], 1);
+		}
 	}	
 	va_end(args);
 
