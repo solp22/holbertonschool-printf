@@ -10,14 +10,15 @@
 /**Struct**/
 typedef struct func
 {
-	char *func;
-	void (*f)(va_list args);
+	char func;
+	int (*f)(va_list args);
 }func_t;
 
 /**Prototypes**/
+int (*get_functions(char format))(va_list);
 int _printf(const char *format, ...);
 int _strlen(char *s);
-void print_string(va_list args);
-void print_char(va_list args);
-void print_percentage(va_list args);
+int print_string(va_list args);
+int print_char(va_list args);
+int print_percentage(va_list args);
 #endif
