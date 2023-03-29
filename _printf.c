@@ -13,20 +13,26 @@ int _printf(const char *format, ...)
 	int (*f)(va_list args);
 
 	va_start(args, format);
-
+	if (format == NULL)
+	{
+		return (-1);
+	}
 	for (iterator = 0; format[iterator]; iterator++)
 	{	
-		if (format[iterator] == NULL)
-		{
-			return (-1);
-		}
 		if (format[iterator] == '%')
 		{
-			f = get_functions(format[iterator + 1]);
-			f(args);
-			iterator++;
+			if (format[iterator] == '\0')
+			{
+				return (-1);
+			}
+			else
+			{
+				f = get_functions(format[iterator + 1]);
+				f(args);
+				iterator++;
+			}
 		}
-		else if (f == NULL) 
+		else if (f == 1) 
 		{
 			write (1, &format[iterator], 1);
 		}
