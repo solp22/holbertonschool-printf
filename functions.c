@@ -2,37 +2,9 @@
 #include <unistd.h>
 
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
-
-/**
- * _strlen - gets length of string
- * @s: string input
- * Return: length of string
- */
-
-int _strlen(char *s)
-{
-	int count;
-
-	for (count = 0; s[count] != '\0'; count++)
-	{
-	}
-	return (count);
-}
-
-/**
  * print_string - prints a string
  * @args: argument
- * Return: nothing
+ * Return: length of string
  */
 
 int print_string(va_list args)
@@ -52,7 +24,7 @@ int print_string(va_list args)
 /**
  * print_char - prints character
  * @args: argument
- * Return: nothing
+ * Return: 1
  */
 
 int print_char(va_list args)
@@ -68,7 +40,7 @@ int print_char(va_list args)
 /**
  * print_percentage - prints a percentage symbol
  * @args: argument
- * Return: nothing
+ * Return: 1
  */
 
 int print_percentage(va_list args)
@@ -85,22 +57,33 @@ int print_percentage(va_list args)
  */
 int print_int(va_list args)
 {
-	int iterator, num, temp, count;
+	int num, keep, count = 0, div = 1, digit;
 
 	num = va_arg(args, int);
-	if (num == 0)
+	/*if num is negative, prints - sign & saves nums absolute value*/
+	if (num < 0)
 	{
-		write(1, num, 1);
-	}
-	temp = num;
-	while (temp > 0)
-	{
+		_putchar('-');
+		keep = num * -1;
 		count++;
-		temp = temp / 10;
 	}
-	for (;iterator >= 0; iterator--)
+	/*if num is positive saves value*/
+	else if (num > 0)
 	{
-		
+		keep = num;
 	}
-
+	/*while saved value / div is greater than two digits, div is multiplied by 10*/
+	while (keep / div >= 10)
+		div = div * 10;
+	while (div > 0)
+	{
+		/*num is divided by div value to get first digit and prints it*/
+		digit = num / div;
+		_putchar(digit + '0');
+		/*updates num's and div's value to print next digits*/
+		num %= div;
+		div /= 10;
+		count++;
+	}
+	return(count);
 }
