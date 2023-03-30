@@ -1,5 +1,10 @@
 #include "main.h"
- 
+/**
+ * get_functions - associates function with specifier given
+ * @format: input specifier
+ * Return: if specifier is in the structure, returns the function assoiciated
+ * if not returns null.
+ */
 int (*get_functions(char format))(va_list)
 {
 	int iterator = 0;
@@ -9,10 +14,11 @@ int (*get_functions(char format))(va_list)
 		{'s', print_string},
 		{'%', print_percentage},
 		{'d', print_int},
+		{'i', print_int},
 		{'\0', NULL}
 	};
 
-	while (iterator < 4)
+	while (iterator < 5)
 	{
 		/*compares if input given is the same as the specifier in the structure*/
 		if (func[iterator].func == format)
@@ -22,7 +28,5 @@ int (*get_functions(char format))(va_list)
 		}
 		iterator++;
 	}
-	write(1, "\n", 1);
-
-	return (0);
+	return (NULL);
 }
