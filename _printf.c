@@ -22,12 +22,10 @@ int _printf(const char *format, ...)
 	{
 		if (format[iterator] == '\0')
 			return (-1);
-
 		if (format[iterator] == '%')
 		{
 			if (format[iterator + 1] == '\0')
-			       return (-1);
-
+				return (-1);
 			f = get_functions(format[iterator + 1]);
 			if (f != NULL)
 			{
