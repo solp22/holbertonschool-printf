@@ -59,6 +59,7 @@ int print_int(va_list args)
 {
 	int num, count = 0, div = 1, digit;
 	unsigned int keep;
+
 	num = va_arg(args, int);
 	/*if num is negative, prints - sign & saves nums absolute value*/
 	if (num < 0)
