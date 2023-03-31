@@ -74,7 +74,7 @@ int print_int(va_list args)
 		div = div * 10;
 	while (div > 0)
 	{
-		digit = num / div;
+		digit = keep / div;
 		_putchar(digit + '0');
 		num %= div;
 		div /= 10;

@@ -20,6 +20,7 @@ int (*get_functions(char format))(va_list);
 int _printf(const char *format, ...);
 int _strlen(char *s);
 int _putchar(char c);
+int print_int(va_list args);
 int print_string(va_list args);
 int print_char(va_list args);
 int print_percentage(va_list args);

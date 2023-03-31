@@ -3,7 +3,7 @@
 /**
  * _printf - performs print according to format
  * @format: format input
- * Return: 0
+ * Return: number of characters printed
  */
 
 int _printf(const char *format, ...)
@@ -18,23 +18,24 @@ int _printf(const char *format, ...)
 		return (-1);
 	}
 	for (iterator = 0; format[iterator]; iterator++)
-	{	
+	{
+		if (format[iterator] == '\0')
+			return (-1);
+
 		if (format[iterator] == '%')
 		{
-			if (format[iterator] == '\0')
-			{
-				return (-1);
-			}
-			else
-			{
-				f = get_functions(format[iterator + 1]);
+			f = get_functions(format[iterator + 1]);
+			if (f != NULL)
+			{	
 				f(args);
 				iterator++;
 			}
+			else
+				_putchar(format[iterator]);
 		}
-		else 
+		else
 		{
-			f(args);
+			_putchar(format[iterator]);
 		}
 	}	
 	va_end(args);
