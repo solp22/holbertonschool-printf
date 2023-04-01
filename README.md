@@ -1,6 +1,6 @@
 <h1 align="center">Holberton School Printf Project</h1>
-<p>This is the first group project, carried out by Holberton students. The goal of this assignment is to recreate the printf function, a basic version of the standard function. It also encourages group and team work with a randomly assigned partner.</p>
-<p>Printf is a C function belonging to the standard library. Its purpose is to print formatted text to the standard output stream. Hence the "f" in the name stands for "formatted".</p>
+<p align= "justify">This is the first group project, carried out by Holberton students. The goal of this assignment is to recreate the printf function, a basic version of the standard function. It also encourages group and team work with a randomly assigned partner.</p>
+<p align= "justify">The printf() function in C is a standard library function that is used to output (print) formatted text on the console or terminal (Hence the "f" in the name stands for "formatted"). It is used to print text, numbers, and other data types to the console by using the appropriate format specifiers in the format string. The format string is a string of characters that can contain placeholders, called format specifiers, which are used to specify the type and format of the data that needs to be printed. The arguments to the printf() function are the values that need to be printed in place of the format specifiers.</p>
 
 <details>
 <summary><h2>Project requirements</h2></summary>
@@ -33,7 +33,7 @@
  
 <details>
 <summary><h2>How does it work?</h2></summary>
-When printf processes its arguments, it starts printing the characters it finds in the first argument, one by one. When it finds a percent ('%') it knows it has a format specification. If the following character is a valid format indicator, it replaces it with the input given according to that format specification. If the '%' is followed by an invalid character for format indication, it simply prints '%' followed by the character. If no format specifier is given, the '%' is simply ignored.
+<p align= "justify">When printf processes its arguments, it starts printing the characters it finds in the first argument, one by one. When it finds a percent ('%') it knows it has a format specification. If the following character is a valid format indicator, it replaces it with the input given according to that format specification. If the '%' is followed by an invalid character for format indication, it simply prints '%' followed by the character. If no format specifier is given, the '%' is simply ignored.</p>
 </details>
 
 <details>
@@ -75,7 +75,7 @@ Character:[H]
 <summary><h2>Files</h2></summary>
   
 ### [_printf.c](/_printf.c/)
-This file contains the main code of the printf function. This function is in charge of checking for possible error cases such as the format given being null, or there being no format specifier given after the '%'. It also is in charge of calling the get_functions function when the conditions are met, as well as sending the format to the print function that will be used. Finally, it is also in charge of returning the the number of characters printed (excluding the null byte used to end output to strings).
+<p align= "justify">This file contains the main code of the printf function. This function is in charge of checking for possible error cases such as the format given being null, or there being no format specifier given after the '%'. It also is in charge of calling the get_functions function when the conditions are met, as well as sending the format to the print function that will be used. Finally, it is also in charge of returning the the number of characters printed (excluding the null byte used to end output to strings).</p>
 <p>Prototype:</p> 
   
  ```ruby
@@ -89,7 +89,7 @@ This file contains the main code of the printf function. This function is in cha
   </details>
   
 ### [get_functions.c](/get_functions.c/)
-This file contains the function that will return the print function associated with the format specifier given. It will do so by comparing the items enlisted in a structure.
+<p align= "justify">This file contains the function that will return the print function associated with the format specifier given. It will do so by comparing the items enlisted in a structure.</p>
 <p>Prototype:</p>
 
 ```ruby
@@ -135,5 +135,7 @@ This file contains the auxiliary functions used by other functions, such as _str
 This file contains all the libraries used, as well as the definition of the structure and the prototypes of each function.
 </details>
 
-<p align="center">Authors: Sol Puente & Joaquin Garcia</p>
+<p align="center">Authors:</p>
+<p align="center"><a href= "https://github.com/solp22">Sol Puente</a></p>
+<p align="center"><a href= "https://github.com/JoaquinGarcia2408">Joaquin Garcia</a></p>
   
